@@ -1,0 +1,140 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:#e3e3e3;   
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color:white;
+    background-image:url("background.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.maincontainainer {
+    width:100%;    
+}
+
+.header {
+    font-size:16px;
+}
+
+.header p{
+    font-family:Arial;
+    font-size:20px;
+    font-weight:700;
+    
+}
+
+.budget {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color:#ae60bf;
+    float:left;
+}
+
+.matches {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color:#00bdb2;    
+    float:left;
+}
+
+.players {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color:#c66580;        
+    float:left;    
+}
+
+.position{
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color:#33a1d5;            
+}
+
+
+
+.team table {
+    margin:10px;              
+    
+}
+
+.team th {   
+    background-color:#38537a;
+    color:white;
+    padding:7px 7px;
+    text-align:center;
+    font-size:15px;  
+}
+
+.team td {      
+    padding:5px 7px;
+    outline: 1px solid #e3e3e3;
+    background-color:#252525;
+    color:white;  
+    opacity:0.85;             
+}
+
+.team td.button {
+    background:none;
+    outline:0px;
+    padding:0px 8px;
+    opacity:1;
+}
+
+.team td.button button {    
+    padding:2px 5px;
+    border-radius:3px;
+    background-color: #009990;
+    color:white;
+    border:0px;    
+}
+

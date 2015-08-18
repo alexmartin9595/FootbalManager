@@ -1,0 +1,39 @@
+﻿@using manager.Entities
+@model manager.UserInterface.Models.MainPageViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Content/jquery-ui.css" type="text/css"/>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/MyScripts/Pagination.js"></script>
+<script src="~/Scripts/MyScripts/TeamDataEditor.js"></script>
+<script src="~/Scripts/MyScripts/PlayersEditor.js"></script>
+<script src="~/Scripts/MyScripts/MessagesEditor.js"></script>
+
+@if (Request.IsAuthenticated)
+{
+    <div class="header">
+    </div>
+}
+<h2>Маркет </h2>
+<div class="search">
+    <label class="searchlabel" for="positionsearch">Позиция</label>
+    <select id="positionsearch">
+        <option selected="selected">все</option>
+        <option>вратари</option>
+        <option>защитники</option>
+        <option>полузащитник</option>
+        <option>нападающий</option>
+    </select>
+        
+    <span class="message"></span>
+</div>
+<div class="team">
+</div>
+
+<div id="pagination" class="pagination"></div>
+
+ 

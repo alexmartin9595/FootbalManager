@@ -1,0 +1,9 @@
+E:\Курсач\WebApplication1\manager.data.Contract\bin\Debug\manager.data.Contract.dll
+E:\Курсач\WebApplication1\manager.data.Contract\bin\Debug\manager.data.Contract.pdb
+E:\Курсач\WebApplication1\manager.data.Contract\bin\Debug\manager.Entities.dll
+E:\Курсач\WebApplication1\manager.data.Contract\bin\Debug\manager.Entities.pdb
+E:\Курсач\WebApplication1\manager.data.Contract\obj\Debug\manager.data.Contract.dll
+E:\Курсач\WebApplication1\manager.data.Contract\obj\Debug\manager.data.Contract.pdb
+E:\Курсач\WebApplication1\manager.data.Contract\obj\Debug\manager.data.Contract.csprojResolveAssemblyReference.cache
+E:\Курсач\WebApplication1\manager.data.Contract\bin\Debug\Newtonsoft.Json.dll
+E:\Курсач\WebApplication1\manager.data.Contract\bin\Debug\Newtonsoft.Json.xml

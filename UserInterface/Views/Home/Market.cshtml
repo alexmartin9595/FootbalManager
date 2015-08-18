@@ -1,0 +1,36 @@
+﻿@using manager.Entities
+@model UserInterface.Models.MainPageViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Market</h2>
+
+<div class="team">
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th>№</th>
+        <th>Игрок</th>
+        <th>Позиция</th>
+        <th>Возраст</th>
+        <th>Атака</th>
+        <th>Защита</th>
+        <th>Цена</th>
+    </tr>
+    @foreach (Player player in Model.Players)
+    {
+        <tr>
+            <td>@player.Id</td>
+            <td>@player.Name</td>
+            <td>@player.Position</td>
+            <td>@player.Age</td>
+            <td>@player.Atack</td>
+            <td>@player.Defence</td>
+            <td>@player.Price</td>
+            <td class="button"><button>купить</button></td>
+        </tr>
+    }
+</table>
+</div>
+
+

@@ -1,0 +1,15 @@
+﻿@using Domain.Entity
+@model IEnumerable<TeamData>
+@{
+    ViewBag.Title = "Stats";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (TeamData team in Model)
+{
+    <div> Бюджет: @team.Budget </div>
+}
+
+
+<h2>Stats</h2>
+

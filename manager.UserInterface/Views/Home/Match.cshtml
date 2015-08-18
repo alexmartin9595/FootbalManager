@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Match";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Матч</h2>
+<br/>
+<div class="matсhheader">
+    <div class="timer"><span>0</span>-я минута</div>
+    <br />
+    <button class="begin_match">Начать</button>
+    <br/>
+    <div class="timer" id="notendtimer" style="display: none">Матч не завершён</div>
+    <div class="timer" id="endtimer" style="display: none">Матч завершён</div>
+    <br />
+    <div class="score">
+        <span id="firstteam"></span>
+        <span id="firstscore"></span>
+        <span id="scoreline">-</span>
+        <span id="secondscore"></span>
+        <span id="secondteam"></span>
+    </div>
+</div>
+<br />
+
+<div class="team" id="team1">
+</div>
+
+<div class="team" id="team2">
+</div>
+
+<div class="team" id="goalscorers">
+</div>
+
+<br/>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/MyScripts/MatchEditor.js"></script>
+<script src="~/Scripts/MyScripts/MessagesEditor.js"></script>

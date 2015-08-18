@@ -1,0 +1,24 @@
+﻿@using manager.Entities
+@model UserInterface.Models.MainPageViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="header">
+    <div class="budget">Бюджет <p>@Model.teamData.Budget</p> </div>
+    <div class="matches">Матчей <p>@Model.teamData.MatchesPlayed</p> </div>
+    <div class="players">Игроков <p>@Model.teamData.PlayersNumber</p> </div>
+    <div class="position">Позиция<p>@Model.teamData.Rate</p></div>
+</div>
+<h2>Моя Команда</h2>
+<div class="team">
+    
+</div>
+
+<script src="~/Scripts/jquery-2.1.3.js"></script>
+<script src="~/Scripts/jquery-2.1.3.min.js"></script>
+<script src="~/Scripts/MyScripts/TeamPlayerEditor.js"></script>
+

@@ -1,0 +1,12 @@
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\manager.Entities.dll
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\manager.Entities.pdb
+E:\Курсач\WebApplication1\manager.Entities\obj\Debug\manager.Entities.dll
+E:\Курсач\WebApplication1\manager.Entities\obj\Debug\manager.Entities.pdb
+E:\Курсач\WebApplication1\manager.Entities\obj\Debug\manager.Entities.csprojResolveAssemblyReference.cache
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\manager.Entities.dll.config
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\EntityFramework.dll
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\EntityFramework.SqlServer.dll
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\EntityFramework.xml
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\EntityFramework.SqlServer.xml
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\Newtonsoft.Json.dll
+E:\Курсач\WebApplication1\manager.Entities\bin\Debug\Newtonsoft.Json.xml

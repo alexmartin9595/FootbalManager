@@ -1,0 +1,17 @@
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Services.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Services.pdb
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Business.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Entities.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\System.Web.Http.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Data.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\EntityFramework.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Business.pdb
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Entities.pdb
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\System.Web.Http.xml
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\manager.Data.pdb
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\EntityFramework.xml
+E:\Курсач\WebApplication1\manager.Services\obj\Debug\manager.Services.csprojResolveAssemblyReference.cache
+E:\Курсач\WebApplication1\manager.Services\obj\Debug\manager.Services.dll
+E:\Курсач\WebApplication1\manager.Services\obj\Debug\manager.Services.pdb
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\Newtonsoft.Json.dll
+E:\Курсач\WebApplication1\manager.Services\bin\Debug\Newtonsoft.Json.xml

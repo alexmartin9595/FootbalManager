@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Сообщения";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/jquery-ui.css" type="text/css" />
+
+<div class="message_dialog">
+</div>
+<div class="message_box">
+    <textarea class="message_text" rows="9" cols="50" autofocus maxlength="1000"></textarea>
+    <br/>
+    <button class="message_send">Отправить</button>
+    <button class="message_reset">Отмена</button>
+</div>
+
+<div class='message_view'>
+    <div class='text'> </div>
+    <button class='message_reset'>Закрыть</button>
+</div>
+
+<h2> Мои Сообщения </h2>
+<span class="message"></span> 
+<br>
+<input type="radio" class="message_radio" name="message1" id="message1_1" checked />
+<label class="message_label" id="inbox_label" for="message1_1">Входящие</label>
+<input type="radio" class="message_radio" name="message1" id="message1_2" />
+<label class="message_label" id="outbox_label" for="message1_2">Отправленные</label>
+
+
+<div class="message_container">
+</div>
+
+<div id="light-pagination" class="pagination"></div>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/MyScripts/Pagination.js"></script>
+<script src="~/Scripts/MyScripts/MessagesEditor.js"></script>
+<script src="~/Scripts/MyScripts/TeamDataEditor.js"></script>

@@ -1,0 +1,737 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:#393939;
+    font-size: 18px;
+    font-family:Arial;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color:white;
+    background-image:url("background.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+
+label {
+    color: #ffffff;
+    margin: 0px;
+    background-color: #252525;
+    opacity: 0.85;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 7px 15px;
+    background-color: #252525;
+    color: #b94a48;
+    border: 0;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #404040;
+    color: #b94a48;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+    margin: 0px;
+}
+
+h2 {
+    display: inline-block;
+    margin: 10px;
+    background-color: #252525;
+    color: #00bdb2;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+h4 {
+    display: inline-block;
+    background-color: #252525;
+    color: #ae60bf;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+
+.maincontainainer {
+    width:100%;    
+}
+
+.header {
+    margin-top: 20px;
+    font-size:20px;
+    font-weight: 600;
+}
+
+.header p{
+    font-family:Arial;
+    font-size:22px;
+    font-weight:700;
+    
+}
+
+.budget {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    color: #ae60bf;
+    border-radius: 10px;
+    float:left;
+}
+
+.matches {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    color:#00bdb2;    
+    float:left;
+}
+
+.players {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    color:#c66580;        
+    float:left;    
+}
+
+.position{
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    color:#33a1d5;  
+}
+
+.wins {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    color: #ae60bf;
+    float:left; 
+}
+
+.draws {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    color: #e3e3e3;
+    float:left;  
+}
+
+.loses {
+    margin:15px 10px;
+    color:white;
+    display:inline-block;
+    text-align:center;
+    padding:5px 15px;
+    background-color: #252525;
+    border-radius: 10px;
+    color:#c66580;        
+    float:left;    
+}
+
+.team {
+    font-size: 18px;
+}
+
+.team table {
+    margin:10px;              
+    
+}
+
+.team th {   
+    background-color:#38537a;
+    color:white;
+    padding:7px 7px;
+    text-align:center;
+    font-size:16px;  
+}
+
+.team td {      
+    padding:7px 10px;
+    outline: 1px solid #e3e3e3;
+    background-color:#252525;
+    color:white;  
+    opacity:0.85;             
+}
+
+.team td.button {
+    background:none;
+    outline:0px;
+    padding:0px 8px;
+    opacity:1;
+}
+
+.team td.button button {
+    margin-left:5px;
+    padding:2px 5px;
+    border-radius:3px;
+    background-color: #00bdb2;
+    color:white;
+    border:0px;    
+}
+
+.team td.button button:hover {
+    background-color: #009990;
+}
+
+.team td.points {
+    color: #00bdb2; 
+    font-weight: 700;
+}
+
+
+
+.field {
+    margin: 50px 0px 0px 10px;
+    background-image:url("field.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    height: 500px;
+    width: 600px;
+    position: relative;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.goalcipper {
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    bottom: 0px;
+    color: #c66580;
+    font-weight: 700;
+}
+
+.leftback {
+    position: absolute;
+    width: 22%;
+    height: 60px;
+    bottom: 190px;
+    left: 15px;
+    color: #ffffff;
+    text-align: center;
+    color: #009990;
+    font-weight: 700;
+}
+
+.leftcenterback {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 110px;
+    left: 160px;
+    color: #ffffff;
+    text-align: center;
+    color: #009990;
+    font-weight: 700;
+}
+
+.rightcenterback {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 110px;
+    right: 160px;
+    color: #ffffff;
+    text-align: center;
+    color: #009990;
+    font-weight: 700;
+}
+
+.rightback {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 190px;
+    right: 15px;
+    color: #ffffff;
+    text-align: center;
+    color: #009990;
+    font-weight: 700;
+}
+
+.leftmidfield {
+    position: absolute;
+    width: 22%;
+    height: 60px;
+    bottom: 310px;
+    left: 15px;
+    color: #ae60bf;
+    font-weight: 700;
+    text-align: center;
+}
+
+.leftcentermidfield {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 270px;
+    left: 160px;
+    color: #ae60bf;
+    font-weight: 700;
+    text-align: center;
+}
+
+.rightcentermidfield {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 270px;
+    right: 160px;
+    color: #ae60bf;
+    font-weight: 700;
+    text-align: center;
+}
+
+.rightmidfield {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 310px;
+    right: 15px;
+    color: #ae60bf;
+    font-weight: 700;
+    text-align: center;
+}
+
+.rightforward {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 415px;
+    right: 105px;
+    color:#33a1d5;
+    font-weight: 700;
+    text-align: center;
+}
+
+.leftforward {
+    position: absolute;
+    width: 22%;
+    height: 55px;
+    bottom: 415px;
+    left: 105px;
+    color:#33a1d5;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.message {
+    opacity: 0.9;
+    color: #c66580;
+    font-size: 18px;
+    font-weight: 700;
+    outline: 0;
+    width: 250px;
+    display: none;
+    margin: 0 10px;
+    margin-left: 10px;
+    padding: 7px;
+    background-color: #252525;
+    border-radius: 10px;
+}
+
+.select button{
+    margin-left:5px;
+    padding:2px 5px;
+    border-radius:3px;
+    background-color: #009990;
+    color:white;
+    border:0px;
+}
+
+.maintitle {
+    text-align: center;
+}
+
+.gamedescription {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color:#252525;
+    color:white;  
+    opacity:0.85;
+    font-size: 22px;
+    margin: 25px auto;
+}
+
+.rules {
+    width: 60%;
+    padding:5px;
+    border-radius: 25px;
+    background-color:#252525;
+    color:white;  
+    opacity:0.85;
+    font-size: 22px;
+    margin: 20px auto;
+}
+
+.search {
+    margin-left: 10px;
+}
+
+
+.searchlabel {
+    color: #00bdb2;
+}
+
+.ui-selectmenu-button span.ui-selectmenu-text {
+    font-size: 18px;
+    padding: 5px;
+    background-color: #252525;
+}
+
+.ui-selectmenu-button {
+    margin-bottom: -11px;
+    padding: 0;
+}
+
+.ui-menu-item {
+    font-size: 18px;
+}
+
+.message_radio {
+    display:none;
+}
+
+.message_label {
+    cursor:pointer;
+    opacity:1;
+    margin: 10px;
+    padding:10px;
+}
+
+.message_label:hover {
+   background-color:#393939;
+}
+
+#inbox_label {
+    color:#c66580;
+}
+
+#outbox_label {
+    color:#33a1d5;
+}
+
+.message_container {
+    width: 55%;
+    margin: 0 10px;
+    position: relative;
+}
+
+.inpox_message {
+    width:100%;
+    color:#33a1d5;
+    background-color:#252525;
+    opacity:0.9;
+    padding: 10px 20px;
+    outline:#ffffff 1px solid;
+}
+
+.text {
+     padding: 0 5px;
+     color: #e3e3e3;
+}
+
+.inpox_message button{
+    margin: 0 5px;
+    padding: 5px 7px;
+    border-radius: 3px;
+    background-color: #00bdb2;
+    color: white;
+    border: 0px;
+}
+
+ .inpox_message button:hover {    
+    background-color: #009990;
+}
+
+ .notification {
+     color:#c66580;
+     padding:5px;
+     border-radius:5px;
+ }
+
+ .outbox_message {
+    width:100%;
+    color:#33a1d5;
+    background-color:#252525;
+    opacity:0.9;
+    padding: 10px 20px;
+    outline:#ffffff 1px solid;
+}
+
+ .outbox_message button{
+    margin: 0 5px;
+    padding: 5px 7px;
+    border-radius: 3px;
+    background-color: #00bdb2;
+    color: white;
+    border: 0px;
+}
+
+ .outbox_message button:hover {    
+    background-color: #009990;
+}
+
+  .notread {
+     background-color: #505050;
+     opacity: 0.95;
+ } 
+
+ input:checked + label { 
+    background-color:#393939;
+}
+
+ .message_dialog {
+     display: none;
+     background-color: #101010;
+     opacity: 0.5;
+     margin: 0;
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     z-index: 100;
+     padding: 0;
+ }
+
+ .message_box {
+     display: none;
+     background-color: #000000;
+     width: 350px;
+     position: fixed;
+     margin: 70px;
+     border-radius: 20px;
+     opacity: 1;
+     z-index: 100;
+     padding: 0;
+     padding: 10px;
+ }
+
+ .message_text {
+     margin: 20px;
+     resize: none;
+ }
+
+ .message_box button {
+    background-color: #252525;
+    border-radius: 10px;
+    border: 0;
+    margin: 0 20px;
+    padding: 10px;
+
+  }
+
+ .message_box button:hover {
+    background-color: #393939;
+}
+
+ .message_send {
+     color:#c66580;
+     float: left;
+ }
+
+ .number_send {
+     color:#c66580;
+     float: left;
+ }
+
+.message_reset {
+    color:#33a1d5;
+}
+
+.message_view {
+    padding: 40px 20px 10px 20px;
+    display: none;
+    background-color: #000000;
+    width: 500px;
+    position: fixed;
+    margin: 0px;
+    top: 320px;
+    left: 60px;
+    border-radius: 20px;
+    opacity: 1;
+    z-index: 10000;
+}
+
+.message_full_text {
+    display: none;
+}
+
+.message_view button {
+    margin: 10px 5px 10px 0;
+    padding: 5px 7px;
+    border-radius: 10px;
+    background-color: #252525;
+    border: 0px;
+}
+
+.message_view button:hover {
+    background-color: #393939;
+}
+
+#number {
+    margin: 5px 15px;
+}
+
+#number_label {
+    margin: 5px 15px;
+}
+
+.matсhheader {
+    display: none   
+}
+
+.timer {
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+    margin: 5px 10px;
+    color:#c66580;
+    border-radius: 10px;
+    background-color: #252525;
+    padding: 10px;
+}
+
+#team1 {
+    font-size: 16px;
+    float: left;
+    margin: 5px 20px 0 0;
+}
+
+#goalscorers {
+    min-height: 500px;
+    font-size: 14px;
+    margin: 5px;
+}
+
+#team2 {
+   float: left;
+   font-size: 16px;
+   margin: 5px 30px 0 0;
+}
+
+.score {
+    display: block;
+    margin: 20px 10px 0 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.score span {
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+#firstteam {
+    color:#33a1d5;
+    margin: 10px 30px 10px 0;
+}
+
+#secondteam {
+    color:#33a1d5;
+    margin: 10px 30px;
+}
+
+#firstscore {
+     color: #ae60bf;
+     margin: 10px;
+}
+
+#secondscore {
+    color: #ae60bf;
+    margin: 10px;
+}
+
+#scoreline {
+    padding: 5px 15px;
+    color: #e3e3e3;
+    margin: 10px;
+}
+
+.begin_match {
+    border: 0;
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+    margin: 5px 10px;
+    background-color: #009990;
+    border-radius: 10px;
+    color: #252525;
+    padding: 10px;
+    display: none;
+}
+
+.begin_match:hover {
+    background-color: #00bdb2;
+}
+

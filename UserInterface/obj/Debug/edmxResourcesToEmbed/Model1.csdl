@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+    <NavigationProperty Name="Users" Relationship="Model.UsersAspNetUsers" FromRole="AspNetUsers" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Goals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="MatchId" Type="Int32" Nullable="false" />
+    <Property Name="Minute" Type="Int32" Nullable="false" />
+    <Property Name="PlayerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Matches" Relationship="Model.GoalsMatches" FromRole="Goals" ToRole="Matches" />
+    <NavigationProperty Name="Users" Relationship="Model.GoalsUsers" FromRole="Goals" ToRole="Users" />
+    <NavigationProperty Name="TeamPlayers" Relationship="Model.GoalsTeamPlayers" FromRole="Goals" ToRole="TeamPlayers" />
+  </EntityType>
+  <EntityType Name="Matches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="FirstTeamGoals" Type="Int32" Nullable="false" />
+    <Property Name="SecondTeamGoals" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Model.MatchesUsers" FromRole="Matches" ToRole="Users" />
+    <NavigationProperty Name="Goals" Relationship="Model.GoalsMatches" FromRole="Matches" ToRole="Goals" />
+    <NavigationProperty Name="Strikes" Relationship="Model.StrikesMatches" FromRole="Matches" ToRole="Strikes" />
+  </EntityType>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Atack" Type="Int32" Nullable="false" />
+    <Property Name="Defence" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Strikes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="MatchId" Type="Int32" Nullable="false" />
+    <Property Name="Minute" Type="Int32" Nullable="false" />
+    <Property Name="PlayerId" Type="Int32" Nullable="false" />
+    <Property Name="IsPerfect" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Model.UsersStrikes" FromRole="Strikes" ToRole="Users" />
+    <NavigationProperty Name="Matches" Relationship="Model.StrikesMatches" FromRole="Strikes" ToRole="Matches" />
+  </EntityType>
+  <EntityType Name="TeamDatas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Budget" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Int32" Nullable="false" />
+    <Property Name="PlayersNumber" Type="Int32" Nullable="false" />
+    <Property Name="MatchesPlayed" Type="Int32" Nullable="false" />
+    <Property Name="MatchesWin" Type="Int32" Nullable="false" />
+    <Property Name="MatchesDraw" Type="Int32" Nullable="false" />
+    <Property Name="MatchesLose" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Model.TeamDatasUsers" FromRole="TeamDatas" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="TeamPlayers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <Property Name="Atack" Type="Int32" Nullable="false" />
+    <Property Name="Defence" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" />
+    <NavigationProperty Name="Users" Relationship="Model.TeamPlayersUsers" FromRole="TeamPlayers" ToRole="Users" />
+    <NavigationProperty Name="Goals" Relationship="Model.GoalsTeamPlayers" FromRole="TeamPlayers" ToRole="Goals" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Model.UsersAspNetUsers" FromRole="Users" ToRole="AspNetUsers" />
+    <NavigationProperty Name="Strikes" Relationship="Model.UsersStrikes" FromRole="Users" ToRole="Strikes" />
+    <NavigationProperty Name="TeamDatas" Relationship="Model.TeamDatasUsers" FromRole="Users" ToRole="TeamDatas" />
+    <NavigationProperty Name="TeamPlayers" Relationship="Model.TeamPlayersUsers" FromRole="Users" ToRole="TeamPlayers" />
+    <NavigationProperty Name="Matches" Relationship="Model.MatchesUsers" FromRole="Users" ToRole="Matches" />
+    <NavigationProperty Name="Goals" Relationship="Model.GoalsUsers" FromRole="Users" ToRole="Goals" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="Goals" EntityType="Self.Goals" />
+    <EntitySet Name="Matches" EntityType="Self.Matches" />
+    <EntitySet Name="Players" EntityType="Self.Players" />
+    <EntitySet Name="Strikes" EntityType="Self.Strikes" />
+    <EntitySet Name="TeamDatas" EntityType="Self.TeamDatas" />
+    <EntitySet Name="TeamPlayers" EntityType="Self.TeamPlayers" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="UsersAspNetUsers" Association="Model.UsersAspNetUsers">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="UsersStrikes" Association="Model.UsersStrikes">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Strikes" EntitySet="Strikes" />
+    </AssociationSet>
+    <AssociationSet Name="TeamDatasUsers" Association="Model.TeamDatasUsers">
+      <End Role="TeamDatas" EntitySet="TeamDatas" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="TeamPlayersUsers" Association="Model.TeamPlayersUsers">
+      <End Role="TeamPlayers" EntitySet="TeamPlayers" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="MatchesUsers" Association="Model.MatchesUsers">
+      <End Role="Matches" EntitySet="Matches" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="GoalsMatches" Association="Model.GoalsMatches">
+      <End Role="Goals" EntitySet="Goals" />
+      <End Role="Matches" EntitySet="Matches" />
+    </AssociationSet>
+    <AssociationSet Name="GoalsUsers" Association="Model.GoalsUsers">
+      <End Role="Goals" EntitySet="Goals" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="GoalsTeamPlayers" Association="Model.GoalsTeamPlayers">
+      <End Role="Goals" EntitySet="Goals" />
+      <End Role="TeamPlayers" EntitySet="TeamPlayers" />
+    </AssociationSet>
+    <AssociationSet Name="StrikesMatches" Association="Model.StrikesMatches">
+      <End Role="Strikes" EntitySet="Strikes" />
+      <End Role="Matches" EntitySet="Matches" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="UsersAspNetUsers">
+    <End Type="Model.Users" Role="Users" Multiplicity="1" />
+    <End Type="Model.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
+  </Association>
+  <Association Name="UsersStrikes">
+    <End Type="Model.Users" Role="Users" Multiplicity="1" />
+    <End Type="Model.Strikes" Role="Strikes" Multiplicity="1" />
+  </Association>
+  <Association Name="TeamDatasUsers">
+    <End Type="Model.TeamDatas" Role="TeamDatas" Multiplicity="1" />
+    <End Type="Model.Users" Role="Users" Multiplicity="1" />
+  </Association>
+  <Association Name="TeamPlayersUsers">
+    <End Type="Model.TeamPlayers" Role="TeamPlayers" Multiplicity="1" />
+    <End Type="Model.Users" Role="Users" Multiplicity="1" />
+  </Association>
+  <Association Name="MatchesUsers">
+    <End Type="Model.Matches" Role="Matches" Multiplicity="1" />
+    <End Type="Model.Users" Role="Users" Multiplicity="1" />
+  </Association>
+  <Association Name="GoalsMatches">
+    <End Type="Model.Goals" Role="Goals" Multiplicity="1" />
+    <End Type="Model.Matches" Role="Matches" Multiplicity="1" />
+  </Association>
+  <Association Name="GoalsUsers">
+    <End Type="Model.Goals" Role="Goals" Multiplicity="1" />
+    <End Type="Model.Users" Role="Users" Multiplicity="1" />
+  </Association>
+  <Association Name="GoalsTeamPlayers">
+    <End Type="Model.Goals" Role="Goals" Multiplicity="1" />
+    <End Type="Model.TeamPlayers" Role="TeamPlayers" Multiplicity="1" />
+  </Association>
+  <Association Name="StrikesMatches">
+    <End Type="Model.Strikes" Role="Strikes" Multiplicity="1" />
+    <End Type="Model.Matches" Role="Matches" Multiplicity="1" />
+  </Association>
+</Schema>

@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@if (Request.IsAuthenticated)
+{
+     <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/MyScripts/TeamDataEditor.js"></script>
+    <script src="~/Scripts/MyScripts/TeamPlayerEditor.js"></script>
+    <script src="~/Scripts/MyScripts/MessagesEditor.js"></script>
+
+    <div class="message_dialog ">
+    </div>
+    <div class="message_box">
+        <label id="number_label">Введите номер</label>
+        <br/>
+        <input id="number" autofocus/>
+        <br />
+        <button class="number_send">Ок</button>
+        <button class="message_reset">Отмена</button>
+    </div>
+    <div class="header">
+    </div>
+    <h2>Моя Команда</h2> <span class="message"></span>
+    
+    <div class="team">
+        <table cellpadding='0' cellspacing='0' style="text-align: center">
+            <tr>
+                <th>№</th>
+                <th>Игрок</th>
+                <th>Позиция</th>
+                <th>Возраст</th>
+                <th>Атака</th>
+                <th>Защита</th>
+                <th>Цена</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="field">
+        <div class="goalcipper"></div>
+        <div class="leftback"></div>
+        <div class="leftcenterback"></div>
+        <div class="rightcenterback"></div>
+        <div class="rightback"></div>
+        <div class="leftmidfield"></div>
+        <div class="leftcentermidfield"></div>
+        <div class="rightcentermidfield"></div>
+        <div class="rightmidfield"></div>
+        <div class="rightforward"></div>
+        <div class="leftforward"></div>
+    </div>
+}
+else
+{
+    <h1 class="maintitle">"Football Dream" - Управляй Мечтой!</h1>
+    <div class="gamedescription">«Football Dream» - бесплатная онлайн игра в жанре футбольного менеджмента. Вы создаёте футбольный клуб и управляете им, соревнуетесь с тысячами реальных соперников. </div>
+    <div class="rules">
+        <ul>
+            <li>Зарегистрируйтесь и команда будет создана автоматически</li>
+            <li>Выберите соперника для  игры</li>
+            <li>Играйте матчи и соревнуйтесь в чемпионате в любое удобное Вам время</li>
+            <li>Набирайте очки за победы и станьте победителем чемпионата</li>
+        </ul>
+    </div>
+}
+
+
+
+
+
+
+
